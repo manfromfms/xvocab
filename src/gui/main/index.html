@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Xvocab</title>
+        <style>
+            .language-select {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                padding: 100px;
+            }
+
+            .language-item {
+                display: flex;
+                justify-content: space-between;
+                border: 2px solid black;
+                border-radius: 15px;
+                padding: 10px;
+                font-size: x-large;
+                align-items: center;
+                margin: 40px;
+                transition: all .1s;
+            }
+
+            .language-item:hover {
+                margin: 20px;
+                padding: 30px;
+                color:  #92dce5;
+                background-color: black;
+                transition: all .1s;
+            }
+
+            .align-text {
+                text-align: center;
+            }
+        </style>
+    
+        <!-- Load font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:ital@1&family=Quicksand:wght@500&family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Inter', sans-serif;
+                font-family: 'Montserrat', sans-serif;
+                font-family: 'Quicksand', sans-serif;
+                font-family: 'Titillium Web', sans-serif;
+            }
+        </style>
+    </head>
+<body>
+    <div class="header">
+        <h1 class="app-name align-text">Xvocab</h1>
+    </div>
+    <div class="content">
+        <h2 class="align-text">Select your preferred GUI language</h2>
+        <div class="language-select">
+            <div class="language-item" onclick="setLanguage('en')">
+                <span>English</span>
+                <span>EN</span>
+                <img src="/media/flags_gb.svg" alt="EN" width="30px">
+            </div>
+            <div class="language-item" onclick="setLanguage('ru')">
+                <span>Русский</span>
+                <span>RU</span>
+                <img src="/media/flags_ru.svg" alt="EN" width="30px">
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+
+    <script>
+        var setLanguage = async (name) => {
+            await fetch('/api/v1/set-language?language='+name)
+            location.reload()
+        }
+    </script>
+</body>
+</html>

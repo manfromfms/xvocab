@@ -1,0 +1,98 @@
+[
+    {
+        "word": "tiny",
+        "translations": {
+            "ru": ["очень маленький"]
+        }
+    },
+    {
+        "word": "enormous",
+        "translations": {
+            "ru": ["очень большой"]
+        }
+    },
+    {
+        "word": "ancient",
+        "translations": {
+            "ru": ["древний"]
+        }
+    },
+    {
+        "word": "essential",
+        "translations": {
+            "ru": ["очень полезный"]
+        }
+    },
+    {
+        "word": "facinating",
+        "translations": {
+            "ru": ["очень интересный"]
+        }
+    },
+    {
+        "word": "extraordinary",
+        "translations": {
+            "ru": ["необычный"]
+        }
+    },
+    {
+        "word": "hilarious",
+        "translations": {
+            "ru": ["очень смешной"]
+        }
+    },
+    {
+        "word": "freezing",
+        "translations": {
+            "ru": ["очень холодный"]
+        }
+    },
+    {
+        "word": "boiling",
+        "translations": {
+            "ru": ["очень горячий"]
+        }
+    },
+    {
+        "word": "starving",
+        "translations": {
+            "ru": ["сильно голодный"]
+        }
+    },
+    {
+        "word": "exhausted",
+        "translations": {
+            "ru": ["сильно усталый"]
+        }
+    },
+    {
+        "word": "delighted",
+        "translations": {
+            "ru": ["очень счастливый"]
+        }
+    },
+    {
+        "word": "miserable",
+        "translations": {
+            "ru": ["убогий"]
+        }
+    },
+    {
+        "word": "great",
+        "translations": {
+            "ru": ["превосходный"]
+        }
+    },
+    {
+        "word": "terrified",
+        "translations": {
+            "ru": ["сильно испуганный"]
+        }
+    },
+    {
+        "word": "gorgeous",
+        "translations": {
+            "ru": ["великолепный", "очень красивый"]
+        }
+    }
+]

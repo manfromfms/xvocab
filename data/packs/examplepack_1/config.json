@@ -1,0 +1,7 @@
+{
+    "name": "Example Pack I",
+    "description": "An example pack.",
+    "files": [
+        "./data/words.json"
+    ]
+}

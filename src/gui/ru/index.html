@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./style.css">
+    <title>Xvocab</title>
+
+    <!-- Load font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:ital@1&family=Quicksand:wght@500&family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Quicksand', sans-serif;
+            font-family: 'Titillium Web', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        
+    </div>
+    <div class="content">
+        <div class="packs-list" id="packs-list">
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+
+    <script src="/global/get-language-gui.js"></script>
+    <script>
+        const plist = document.getElementById('packs-list')
+
+        var loadPackPage = (id) => {
+            window.open(`/${lg}/pack?id=${id}`, "_self")
+        }
+
+        fetch("/api/v1/get-packs-list").then(res => res.json().then(data => {
+            for(let e of data) {
+                plist.insertAdjacentHTML('beforeend', `
+                    <div class="packs-list-item" onclick="loadPackPage(${e.id})">
+                        <h2>${e.name}</h2>
+                        <p>${e.description}</p>
+                        <p>Кол-во слов: ${e.words.amount}</p>
+                    </div>`
+                )
+            }
+        }))
+    </script>
+</body>
+</html>

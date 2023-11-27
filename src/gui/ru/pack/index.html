@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./style.css">
+    <title>Xvocab</title>
+
+    <!-- Load font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:ital@1&family=Quicksand:wght@500&family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Quicksand', sans-serif;
+            font-family: 'Titillium Web', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        
+    </div>
+    <div class="content">
+        <div class="pack-data" id="pack-data">
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+
+    <script src="/global/get-language-gui.js"></script>
+    <script>
+        const pdata = document.getElementById('pack-data')
+        const query = (new URLSearchParams((new URL(window.location.href)).search))
+
+        fetch(`/api/v1/get-pack-data?id=${query.get('id')}`).then(res => res.json().then(data => {
+            var wordsList = ""
+
+            for(let i of data.words) {
+                wordsList += `<div class="word-item"><span class="word-word">${i.word}</span><span class="word-translation">${i.translations[lg]}</span></div>`
+            }
+
+            pdata.insertAdjacentHTML('beforeend', `
+                <div class="pack-desc">
+                    <h2>${data.name}</h2>
+                    <p>${data.description}</p>
+                    <p>Кол-во слов: ${data.words.length}</p>
+                </div>
+                <div class="words-list">
+                    ${wordsList}
+                </div>
+                `
+            )
+        }))
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+const lg = window.location.href.split('/')[3]
