@@ -22,6 +22,10 @@ app.get('/', (req, res) => {
     }
 }).get('/global/get-language-gui.js', (req, res) => {
     res.sendFile(__dirname + '/src/gui/global/get-language-gui.js')
+}).get('/global/style.css', (req, res) => {
+    res.sendFile(__dirname + '/src/gui/global/style.css')
+}).get('/global/script.js', (req, res) => {
+    res.sendFile(__dirname + '/src/gui/global/script.js')
 })
 
 

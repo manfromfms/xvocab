@@ -1,0 +1,158 @@
+[
+    {
+        "word": "apple",
+        "translations": {
+            "ru": ["яблоко"]
+        }
+    },
+    {
+        "word": "boy",
+        "translations": {
+            "ru": ["мальчик"]
+        }
+    },
+    {
+        "word": "cat",
+        "translations": {
+            "ru": ["кот"]
+        }
+    },
+    {
+        "word": "dog",
+        "translations": {
+            "ru": ["собака"]
+        }
+    },
+    {
+        "word": "egg",
+        "translations": {
+            "ru": ["яйцо"]
+        }
+    },
+    {
+        "word": "fish",
+        "translations": {
+            "ru": ["рыба"]
+        }
+    },
+    {
+        "word": "girl",
+        "translations": {
+            "ru": ["девочка"]
+        }
+    },
+    {
+        "word": "house",
+        "translations": {
+            "ru": ["дом"]
+        }
+    },
+    {
+        "word": "ice",
+        "translations": {
+            "ru": ["лед"]
+        }
+    },
+    {
+        "word": "juice",
+        "translations": {
+            "ru": ["сок"]
+        }
+    },
+    {
+        "word": "kite",
+        "translations": {
+            "ru": ["воздушный змей"]
+        }
+    },
+    {
+        "word": "lemon",
+        "translations": {
+            "ru": ["лимон"]
+        }
+    },
+    {
+        "word": "monkey",
+        "translations": {
+            "ru": ["обезьяна"]
+        }
+    },
+    {
+        "word": "nose",
+        "translations": {
+            "ru": ["нос"]
+        }
+    },
+    {
+        "word": "orange",
+        "translations": {
+            "ru": ["апельсин"]
+        }
+    },
+    {
+        "word": "pencil",
+        "translations": {
+            "ru": ["карандаш"]
+        }
+    },
+    {
+        "word": "queen",
+        "translations": {
+            "ru": ["королева"]
+        }
+    },
+    {
+        "word": "rabbit",
+        "translations": {
+            "ru": ["кролик"]
+        }
+    },
+    {
+        "word": "snake",
+        "translations": {
+            "ru": ["змея"]
+        }
+    },
+    {
+        "word": "turtle",
+        "translations": {
+            "ru": ["черепаха"]
+        }
+    },
+    {
+        "word": "umbrella",
+        "translations": {
+            "ru": ["зонт"]
+        }
+    },
+    {
+        "word": "van",
+        "translations": {
+            "ru": ["автобус"]
+        }
+    },
+    {
+        "word": "whale",
+        "translations": {
+            "ru": ["кит"]
+        }
+    },
+    {
+        "word": "x-ray",
+        "translations": {
+            "ru": ["рентген"]
+        }
+    },
+    {
+        "word": "yacht",
+        "translations": {
+            "ru": ["яхта"]
+        }
+    },
+    {
+        "word": "zebra",
+        "translations": {
+            "ru": ["зебра"]
+        }
+    }
+]
