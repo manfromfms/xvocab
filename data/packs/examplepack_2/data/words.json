@@ -1,37 +1,37 @@
 [
     {
         "word": "aggressive",
-        "transtlations": {
+        "translations": {
             "ru": ["агрессивный"]
         }
     },
     {
         "word": "ambitious",
-        "transtlations": {
+        "translations": {
             "ru": ["честолюбивый", "амбициозный"]
         }
     },
     {
         "word": "anxious",
-        "transtlations": {
+        "translations": {
             "ru": ["агрессивный", "взволнованный", "тревожный"]
         }
     },
     {
         "word": "charming",
-        "transtlations": {
+        "translations": {
             "ru": ["чудесный", "очаровательный", "милый"]
         }
     },
     {
         "word": "irresponsible",
-        "transtlations": {
+        "translations": {
             "ru": ["безответственный"]
         }
     },
     {
         "word": "outgoing",
-        "transtlations": {
+        "translations": {
             "ru": ["общительный"]
         }
     }
