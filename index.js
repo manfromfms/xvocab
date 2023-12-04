@@ -1,12 +1,18 @@
+// Load packs
 const { importPacks, packsList } = require('./src/scripts/packs')
 var packs = importPacks(__dirname + '/data/packs')
+
 console.log(`Successfuly loaded ${packs.length} packs`)
 
+// Boot up training
+const { Train } = require('./src/scripts/train')
+const train = new Train(__dirname + '/data/user', packs)
 
+// Load GUI params
 const { GUI } = require('./src/scripts/gui')
 const gui = new GUI(__dirname + '/data/user/')
 
-
+// Config express
 const express = require('express')
 const app = express()
 const port = 4100
@@ -55,6 +61,7 @@ app.get('/api/v1/get-packs-list', (req, res) => {
 })
 
 
+// Start the server
 app.listen(port, () => {
     console.log(`Listening :${port}`)
 })

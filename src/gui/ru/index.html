@@ -65,7 +65,7 @@
         fetch("/api/v1/get-packs-list").then(res => res.json().then(data => {
             for(let e of data) {
                 plist.insertAdjacentHTML('beforeend', `
-                    <div class="packs-list-item" onclick="loadPackPage(${e.id})">
+                    <div class="packs-list-item" onclick="loadPackPage('${e.id}')">
                         <h2 class="pack-name">${e.name}</h2>
                         <p class="pack-desciption">${e.description}</p>
                         <p class="pack-words-amount">Кол-во слов: ${e.words.amount}</p>

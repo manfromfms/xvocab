@@ -9,26 +9,26 @@ class Pack {
 var importPacks = (dir) => {
     var folders = fs.readdirSync(dir)
 
-    var result = []
+    var result = {}
 
     for(let f of folders) {
         if(fs.existsSync(`${dir}/${f}/config.json`)) {
             try {
                 var config = require(`${dir}/${f}/config.json`)
 
-                const { name, description, files} = config
+                const { name, description, files, packId } = config
 
                 const pack = new Pack()
                 pack.name = name || ''
                 pack.description = description || ''
                 pack.words = []
-                pack.id = result.length
+                pack.id = packId
                 
                 for(let i in files) {
                     pack.words.push(...require(`${dir}/${f}/${files[i]}`))
                 }
 
-                result.push(pack)
+                result[packId] = pack
 
             } catch(err) {
                 console.log(`Unable to load ${f}`)

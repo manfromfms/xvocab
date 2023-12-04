@@ -3,5 +3,6 @@
     "description": "The sceond example pack.",
     "files": [
         "./data/words.json"
-    ]
+    ],
+    "packId": "example_pack_2"
 }

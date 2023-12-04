@@ -3,5 +3,6 @@
     "description": "Generated list of A1-A2 words",
     "files": [
         "./data/words.json"
-    ]
+    ],
+    "packId": "example_pack_3"
 }

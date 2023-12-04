@@ -3,5 +3,6 @@
     "description": "An example pack.",
     "files": [
         "./data/words.json"
-    ]
+    ],
+    "packId": "example_pack_1"
 }

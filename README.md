@@ -3,6 +3,11 @@ Open source project made by [normchell](https://github.com/manfromfms/). The goa
 
 The main idea is to make an app to learn new vocabulary with an ability to share custom packs for free.
 
+# Translations
+Here is a list of currently available languanges:
+1. [Русский]()
+
+
 # Installation
 1. Install [Node.js](https://nodejs.org)
 2. Clone this repository `git clone https://github.com/manfromfms/xvocab` or download ZIP file
@@ -10,4 +15,4 @@ The main idea is to make an app to learn new vocabulary with an ability to share
 
 # Run
 1. Use `node index` in terminal to run the app. 
-2. Open [`http://localhost:4100`](http://localhost:4100)
+2. Open [`http://localhost:4100`](http://localhost:4100) in any browser
