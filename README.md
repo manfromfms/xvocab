@@ -1,5 +1,5 @@
 # Xvocab
-Open source project made by [normchell](https://github.com/manfromfms/). The goal is to provide a useful tool for english learners.
+Open source project made by [manfromfms](https://github.com/manfromfms/). The goal is to provide a useful tool for english learners.
 
 The main idea is to make an app to learn new vocabulary with an ability to share custom packs for free.
 
