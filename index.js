@@ -2,7 +2,7 @@
 const { importPacks, packsList } = require('./src/scripts/packs')
 var packs = importPacks(__dirname + '/data/packs')
 
-console.log(`Successfuly loaded ${packs.length} packs`)
+console.log(`Successfuly loaded ${Object.keys(packs).length} packs`)
 
 // Boot up training
 const { Train } = require('./src/scripts/train')
@@ -46,20 +46,38 @@ app.get('/:language/', (req, res) => {
     res.sendFile(__dirname + `/src/gui/${req.params.language}/index.html`)
 }).get('/:language/style.css', (req, res) => {
     res.sendFile(__dirname + `/src/gui/${req.params.language}/style.css`)
-}).get('/:language/pack', (req, res) => {
+})
+
+// Pack info page
+app.get('/:language/pack', (req, res) => {
     res.sendFile(__dirname + `/src/gui/${req.params.language}/pack/index.html`)
+})
+
+// Train pages
+app.get('/:language/train', (req, res) => {
+    res.sendFile(__dirname + `/src/gui/${req.params.language}/train/index.html`)
 })
 
 
 // ----- API ------
 app.get('/api/v1/get-packs-list', (req, res) => {
     res.json(packsList(packs))
-}).get('/api/v1/set-language', (req, res) => {
-    res.json(gui.setLanguage(req.query.language))
+}).get('/api/v1/get-random-word', (req, res) => {
+    res.json(train.getRandomWord(req.query.pack))
+}).get('/api/v1/post-result', (req, res) => {
+    train.applyResult({pack: req.query.pack, word: req.query.word, result: req.query.result === 'true'})
+    res.send(true)
 }).get('/api/v1/get-pack-data', (req, res) => {
     res.json(packs[req.query.id])
+}).get('/api/v1/get-word', (req, res) => {
+    if(req.query.type === '1') {
+        res.json(train.getLeastKnown(req.query.pack))
+    }
 })
 
+app.get('/api/v1/set-language', (req, res) => {
+    res.json(gui.setLanguage(req.query.language))
+})
 
 // Start the server
 app.listen(port, () => {

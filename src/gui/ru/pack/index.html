@@ -76,7 +76,6 @@
     <script src="/global/script.js"></script>
     <script>
         const pdata = document.getElementById('pack-data')
-        const query = (new URLSearchParams((new URL(window.location.href)).search))
 
         fetch(`/api/v1/get-pack-data?id=${query.get('id')}`).then(res => res.json().then(data => {
             var wordsList = ""

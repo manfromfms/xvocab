@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/global/style.css">
+
+    <link rel="stylesheet" href="./style.css">
+    <title>Xvocab</title>
+
+    <!-- Load font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:ital@1&family=Quicksand:wght@500&family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
+    <style>
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="xvocab-tite"><a href="/" class="xvocab-title-a">Xvocab</a></h1>
+    </div>
+    <div class="content">
+        <p class="translation" id="translation"></p>
+        <p class="to-write" id="to-write" contenteditable="true" oninput="writeChanged()"></p>
+        <button class="hint" onclick="hint()">Подсказка</button>
+    </div>
+    <div class="footer">
+        <span class="date" id="date"></span>
+    </div>
+
+    <script src="/global/get-language-gui.js"></script>
+    <script src="/global/script.js"></script>
+    <script>
+        const write = document.getElementById('to-write')
+        const translation = document.getElementById('translation')
+
+        var doneCorrectly = true
+        var currentData = {}
+
+        var getNewWord = async () => {
+            doneCorrectly = true
+
+            var data
+
+            if(query.get('type') == 1) {
+                console.log('Getting least know word')
+                data = await (await fetch('/api/v1/get-word?type=1' + (query.get('pack') ? query.get('pack') : ''))).json() 
+            } else {
+                console.log('Getting random word')
+                data = await (await fetch('/api/v1/get-random-word' + (query.get('pack') ? query.get('pack') : ''))).json() 
+            }
+            
+            translation.innerHTML = data.word.translations[lg]
+            write.innerHTML = ''
+
+            currentData = data
+        }
+
+        var hint = () => {
+            var index = 0
+            while(write.innerHTML[index] === currentData.word.word[index] && index < currentData.word.word.length - 1) {
+                index++
+            }
+
+            write.innerHTML = write.innerHTML.slice(0, index)
+            write.innerHTML += currentData.word.word[index]
+
+            doneCorrectly = false
+        }
+
+        var niceCompare = () => {
+            var niceInput = write.innerHTML
+            var niceWord = currentData.word.word
+
+            niceInput = niceInput.replace(/\W/g, '')
+            niceWord = niceWord.replace(/\W/g, '')
+
+            niceInput = niceInput.toLocaleLowerCase()
+            niceWord = niceWord.toLocaleLowerCase()
+
+            return niceInput === niceWord
+        }
+
+        var writeChanged = async () => {
+            if(!niceCompare()) return
+            fetch(`/api/v1/post-result?pack=${currentData.packId}&word=${currentData.word.word}&result=${doneCorrectly}`).then(getNewWord)
+        }
+
+        getNewWord()
+    </script>
+</body>
+</html>
