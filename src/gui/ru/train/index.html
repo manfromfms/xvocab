@@ -41,14 +41,20 @@
         var getNewWord = async () => {
             doneCorrectly = true
 
+            var pack = ''
+
+            if(query.has('pack')) {
+                pack = query.get('pack')
+            }
+
             var data
 
             if(query.get('type') == 1) {
                 console.log('Getting least know word')
-                data = await (await fetch('/api/v1/get-word?type=1' + (query.get('pack') ? query.get('pack') : ''))).json() 
+                data = await (await fetch(`/api/v1/get-word?type=1&pack=${(query.get('pack') ? query.get('pack') : '')}`)).json() 
             } else {
                 console.log('Getting random word')
-                data = await (await fetch('/api/v1/get-random-word' + (query.get('pack') ? query.get('pack') : ''))).json() 
+                data = await (await fetch(`/api/v1/get-random-word&pack=${(query.get('pack') ? query.get('pack') : '')}`)).json() 
             }
             
             translation.innerHTML = data.word.translations[lg]
