@@ -5,7 +5,8 @@ The main idea is to make an app to learn new vocabulary with an ability to share
 
 # Translations
 Here is a list of currently available languanges:
-1. [Русский](https://github.com/manfromfms/xvocab/blob/main/github/root/ru/README.md)
+1. [English](https://github.com/manfromfms/xvocab)
+2. [Русский](https://github.com/manfromfms/xvocab/blob/main/github/root/ru/README.md)
 
 
 # Installation
