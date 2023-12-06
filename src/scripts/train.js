@@ -89,8 +89,18 @@ class Train {
             }
         }
 
-        let leastKnownWordKey = Object.keys(wordsList).reduce((a, b) => wordsList[a].progress < wordsList[b].progress ? a : b)
-        return wordsList[leastKnownWordKey]
+        const pairs = Object.entries(wordsList).map(([key, val]) => [key, Math.pow(1.1 - val.progress, 4)])
+        const sum = pairs.reduce((acc, val) => acc + val[1], 0)
+        const chances = pairs.map(([key, val]) => [key, val / sum])
+
+        var rand = Math.random()
+        var cumulative = 0.0
+        for (let i = 0; i < chances.length; i++) {
+            cumulative += chances[i][1]
+            if (rand < cumulative) {
+                return wordsList[chances[i][0]]
+            }
+        }
     }
 }
 

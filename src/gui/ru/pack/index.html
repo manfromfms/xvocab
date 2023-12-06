@@ -77,7 +77,14 @@
     <script>
         const pdata = document.getElementById('pack-data')
 
+        var packData = {}
+
+        const openTrain = () => {
+            window.open(`/${lg}/train?type=1&pack=${packData.id}`, "_self")
+        }
+
         fetch(`/api/v1/get-pack-data?id=${query.get('id')}`).then(res => res.json().then(data => {
+            packData = data
             var wordsList = ""
 
             for(let i of data.words) {
@@ -89,6 +96,7 @@
                     <h2 class="pack-name">${data.name}</h2>
                     <p class="pack-desc">${data.description}</p>
                     <p class="pack-words-amount">Кол-во слов: ${data.words.length}</p>
+                    <button class="start-train" onclick="openTrain()">Тренировка</button>
                 </div>
                 <div class="words-list">
                     ${wordsList}
