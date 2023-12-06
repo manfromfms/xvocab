@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/global/style.css">
+
+    <link rel="stylesheet" href="./style.css">
+    <title>Xvocab</title>
+
+    <!-- Load font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:ital@1&family=Quicksand:wght@500&family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
+    <style>
+        .pack-data {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+        
+        .pack-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 10px;
+            max-height: min-content;
+        }
+
+        .words-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-right: 10px;
+            padding-left: 10px;
+            overflow-x: hidden;
+        }
+
+        .word-item {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr 2fr;
+            border-radius: 10px;
+            margin: 0px 10px 0px 10px;
+            padding: 10px;
+            font-size: x-large;
+            transition: all .1s;
+        }
+
+        .word-item:hover {
+            background-color: black;
+            color: white;
+            transition: all .1s;
+        }
+
+        .word-word {
+            text-align: end;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="root">
+        <div class="sidebar">
+            <img src="https://static.thenounproject.com/png/4147238-200.png" width="50px" alt="Nice image">
+        </div>
+        <div class="main">
+            <div class="header">
+                <h1 class="xvocab-tite"><a href="/" class="xvocab-title-a">Xvocab</a></h1>
+            </div>
+            <div class="content">
+                <div class="pack-data" id="pack-data">
+                </div>
+            </div>
+            <div class="footer">
+                <span class="date" id="date"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="/global/get-language-gui.js"></script>
+    <script src="/global/script.js"></script>
+    <script>
+        const pdata = document.getElementById('pack-data')
+
+        var packData = {}
+
+        const openTrain = () => {
+            window.open(`/${lg}/train?type=1&pack=${packData.id}`, "_self")
+        }
+
+        fetch(`/api/v1/get-pack-data?id=${query.get('id')}`).then(res => res.json().then(data => {
+            packData = data
+            var wordsList = ""
+
+            for(let i of data.words) {
+                wordsList += `<div class="word-item"><span class="word-word">${i.word}</span><span class="word-translation">${i.translations[lg]}</span></div>`
+            }
+
+            pdata.insertAdjacentHTML('beforeend', `
+                <div class="pack-info">
+                    <h2 class="pack-name">${data.name}</h2>
+                    <p class="pack-desc">${data.description}</p>
+                    <p class="pack-words-amount">Amount: ${data.words.length}</p>
+                    <button class="start-train" onclick="openTrain()">Train</button>
+                </div>
+                <div class="words-list">
+                    ${wordsList}
+                </div>
+                `
+            )
+        }))
+    </script>
+</body>
+</html>
