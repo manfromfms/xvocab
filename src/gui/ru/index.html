@@ -22,6 +22,7 @@
         }
 
         .packs-list-item {
+            color: black;
             display: flex;
             flex-direction: column;
             margin: 30px 20px 30px 20px;
@@ -29,28 +30,34 @@
             padding: 10px;
             width: 15%;
             align-items: center;
-            background-color: #ef959d;
+            background-color: #aeb8fe;
             transition: all 0.15s;
         }
 
         .packs-list-item:hover {
-            background-color: #69585f;
-            color: white;
+            background-color: #f1f2f6;
             box-shadow: 10px 10px 0px 0px black;
             transition: all 0.15s;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1 class="xvocab-tite"><a href="/" class="xvocab-title-a">Xvocab</a></h1>
-    </div>
-    <div class="content">
-        <div class="packs-list" id="packs-list">
+    <div class="root">
+        <div class="sidebar">
+            <img src="https://static.thenounproject.com/png/4147238-200.png" width="50px" alt="Nice image">
         </div>
-    </div>
-    <div class="footer">
-        <span class="date" id="date"></span>
+        <div class="main">
+            <div class="header">
+                <h1 class="xvocab-tite"><a href="/" class="xvocab-title-a">Xvocab</a></h1>
+            </div>
+            <div class="content">
+                <div class="packs-list" id="packs-list">
+                </div>
+            </div>
+            <div class="footer">
+                <span class="date" id="date"></span>
+            </div>
+        </div>
     </div>
 
     <script src="/global/get-language-gui.js"></script>
