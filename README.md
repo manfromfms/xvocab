@@ -25,7 +25,7 @@ To run the app, follow these steps:
 
 # Contributing
 
-We welcome contributions to Xvocab. Please feel free to submit a pull request or open an issue to suggest improvements or report bugs.
+We welcome contributions to Xvocab. Please feel free to submit a pull request or open an issue to suggest improvements, translate the GUI or report bugs.
 
 # License
 
