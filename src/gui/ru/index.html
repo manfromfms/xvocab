@@ -73,8 +73,8 @@
             for(let e of data) {
                 plist.insertAdjacentHTML('beforeend', `
                     <div class="packs-list-item" onclick="loadPackPage('${e.id}')">
-                        <h2 class="pack-name">${e.name}</h2>
-                        <p class="pack-desciption">${e.description}</p>
+                        <h2 class="pack-name">${e.name[lg]}</h2>
+                        <p class="pack-desciption">${e.description[lg]}</p>
                         <p class="pack-words-amount">Кол-во слов: ${e.words.amount}</p>
                     </div>`
                 )

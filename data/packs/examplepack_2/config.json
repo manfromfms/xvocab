@@ -1,6 +1,12 @@
 {
-    "name": "Example Pack II",
-    "description": "The sceond example pack.",
+    "name": {
+        "en": "Example Pack II",
+        "ru": "Тестовый набор 2"
+    },
+    "description": {
+        "en": "The second example pack.",
+        "ru": "Второй тестовый набор слов"
+    },
     "files": [
         "./data/words.json"
     ],

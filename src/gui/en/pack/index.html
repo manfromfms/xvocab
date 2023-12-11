@@ -100,8 +100,8 @@
 
             pdata.insertAdjacentHTML('beforeend', `
                 <div class="pack-info">
-                    <h2 class="pack-name">${data.name}</h2>
-                    <p class="pack-desc">${data.description}</p>
+                    <h2 class="pack-name">${data.name[lg]}</h2>
+                    <p class="pack-desc">${data.description[lg]}</p>
                     <p class="pack-words-amount">Amount: ${data.words.length}</p>
                     <button class="start-train" onclick="openTrain()">Train</button>
                 </div>
