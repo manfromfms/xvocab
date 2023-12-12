@@ -1,6 +1,12 @@
 {
-    "name": "Example Pack III",
-    "description": "Generated list of A1-A2 words",
+    "name": {
+        "en": "Example Pack III",
+        "ru": "Тестовый набор 3"
+    },
+    "description": {
+        "en": "Generated list of A1-A2 words",
+        "ru": "Набор сгенерированных A1-A2 слов"
+    },
     "files": [
         "./data/words.json"
     ],

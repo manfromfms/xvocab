@@ -1,6 +1,6 @@
 # Xvocab
 
-Xvocab is an open-source project created by [manfromfms](https://github.com/manfromfms/). The primary aim of this project is to provide a valuable tool for English learners. The app is designed to help users learn new vocabulary from different languages and offers the feature to share custom packs for free.
+Xvocab is an open-source project created by [manfromfms](https://github.com/manfromfms/). The primary aim of this project is to provide a valuable tool to learn foreign languages. The app is designed to help users learn new vocabulary from different languages and offers the feature to share custom packs for free.
 
 # Languages
 
@@ -26,7 +26,7 @@ To run the app, follow these steps:
 
 # Contributing
 
-We welcome contributions to Xvocab. Please feel free to submit a pull request or open an issue to suggest improvements or report bugs.
+We welcome contributions to Xvocab. Please feel free to submit a pull request or open an issue to suggest improvements, translate the GUI or report bugs.
 
 # License
 
