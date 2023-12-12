@@ -6,7 +6,7 @@ Xvocab is an open-source project created by [manfromfms](https://github.com/manf
 
 Currently, the following languages are supported:
 1. [English](https://github.com/manfromfms/xvocab)
-2. [Русский](https://github.com/manfromfms/xvocab/blob/main/github/root/ru/README.md)
+2. [Russian](https://github.com/manfromfms/xvocab/blob/main/github/root/ru/README.md)
 3. [French](https://github.com/manfromfms/xvocab/blob/main/github/root/fr/README.md)
 
 # Installation
@@ -23,11 +23,3 @@ To run the app, follow these steps:
 
 1. Open the `start.bat` file. Please do not close this file while using the app
 2. Open [`http://localhost:4100`](http://localhost:4100) in any web browser
-
-# Contributing
-
-We welcome contributions to Xvocab. Please feel free to submit a pull request or open an issue to suggest improvements or report bugs.
-
-# License
-
-Xvocab is open-source and licensed under the [MIT License](https://opensource.org/licenses/MIT).

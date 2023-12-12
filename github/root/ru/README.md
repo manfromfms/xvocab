@@ -7,6 +7,7 @@ Xvocab - это открытый проект, созданный [manfromfms](h
 В настоящее время поддерживаются следующие языки:
 1. [Английский](https://github.com/manfromfms/xvocab)
 2. [Русский](https://github.com/manfromfms/xvocab/blob/main/github/root/ru/README.md)
+3. [Французский](https://github.com/manfromfms/xvocab/blob/main/github/root/fr/README.md)
 
 # Установка
 
