@@ -1,11 +1,13 @@
 {
     "name": {
         "en": "Example Pack III",
-        "ru": "Тестовый набор 3"
+        "ru": "Тестовый набор 3",
+        "fr": "Pack Exemple III"
     },
     "description": {
         "en": "Generated list of A1-A2 words",
-        "ru": "Набор сгенерированных A1-A2 слов"
+        "ru": "Набор сгенерированных A1-A2 слов",
+        "fr": "Liste générée de mots de niveau A1-A2"
     },
     "files": [
         "./data/words.json"

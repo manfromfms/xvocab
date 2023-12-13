@@ -1,25 +1,25 @@
 # Xvocab
 
-Xvocab is an open-source project created by [manfromfms](https://github.com/manfromfms/). The primary aim of this project is to provide a valuable tool for English learners. The app is designed to help users learn new vocabulary from different languages and offers the feature to share custom packs for free.
+Xvocab est un projet Open Source créé par [manfromfms](https://github.com/manfromfms/). Le but premier de ce projet est de donner accés à un outil de qualité aux apprenants de la langue anglaise. Cette application a été conçue pour aider les utilisateurs à apprendre du vocabluaire de différents langages, et offre la possibilité de partager des packs personnalisés gratuitement.
 
-# Languages
+# Langues supportées
 
-Currently, the following languages are supported:
-1. [English](https://github.com/manfromfms/xvocab)
-2. [Russian](https://github.com/manfromfms/xvocab/blob/main/github/root/ru/README.md)
-3. [French](https://github.com/manfromfms/xvocab/blob/main/github/root/fr/README.md)
+Pour le moment, l'application est disponible dans ces langues :
+1. [Anglais](https://github.com/manfromfms/xvocab)
+2. [Russe](https://github.com/manfromfms/xvocab/blob/main/github/root/ru/README.md)
+3. [Français](https://github.com/manfromfms/xvocab/blob/main/github/root/fr/README.md)
 
 # Installation
 
-To get started with Xvocab, follow these steps:
+Pour débuter votre expérience avec Xvocab, suivez ces étapes :
 
-1. Install [Node.js](https://nodejs.org)
-2. Clone this repository using `git clone https://github.com/manfromfms/xvocab` or download the ZIP file
-3. Run the `init.bat` file
+1. Installez [Node.js](https://nodejs.org)
+2. Clonez cette repository en utilisant la commande `git clone https://github.com/manfromfms/xvocab` ou téléchargez le fichier ZIP
+3. Exécutez le fichier `init.bat` 
 
-# Running the App
+# Lancer l'application
 
-To run the app, follow these steps:
+Pour lancer l'application, suivez ces étapes:
 
-1. Open the `start.bat` file. Please do not close this file while using the app
-2. Open [`http://localhost:4100`](http://localhost:4100) in any web browser
+1. Ouvrez le fichier `start.bat`. Faites attention de ne pas fermer ce fichier lorsque vous utilisez l'application.
+2. Ouvrez [`http://localhost:4100`](http://localhost:4100) dans n'importe quel navigateur.
