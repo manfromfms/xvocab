@@ -2,97 +2,113 @@
     {
         "word": "tiny",
         "translations": {
-            "ru": ["очень маленький"]
+            "ru": ["очень маленький"],
+            "fr" : ["petit"]
         }
     },
     {
         "word": "enormous",
         "translations": {
-            "ru": ["очень большой"]
+            "ru": ["очень большой"],
+            "fr": ["énorme"]
         }
     },
     {
         "word": "ancient",
         "translations": {
-            "ru": ["древний"]
+            "ru": ["древний"],
+            "fr": ["ancient"]
         }
     },
     {
         "word": "essential",
         "translations": {
-            "ru": ["очень полезный"]
+            "ru": ["очень полезный"],
+            "fr": ["essentiel"]
         }
     },
     {
         "word": "facinating",
         "translations": {
-            "ru": ["очень интересный"]
+            "ru": ["очень интересный"],
+            "fr": ["fascinant"]
         }
     },
     {
         "word": "extraordinary",
         "translations": {
-            "ru": ["необычный"]
+            "ru": ["необычный"],
+            "fr": ["extraordinaire"]
         }
     },
     {
         "word": "hilarious",
         "translations": {
-            "ru": ["очень смешной"]
+            "ru": ["очень смешной"],
+            "fr": ["hilarant"]
         }
     },
     {
         "word": "freezing",
         "translations": {
-            "ru": ["очень холодный"]
+            "ru": ["очень холодный"],
+            "fr": ["glacial"]
         }
     },
     {
         "word": "boiling",
         "translations": {
-            "ru": ["очень горячий"]
+            "ru": ["очень горячий"],
+            "fr": ["bouillant"]
         }
     },
     {
         "word": "starving",
         "translations": {
-            "ru": ["сильно голодный"]
+            "ru": ["сильно голодный"],
+            "fr": ["affamé"]
         }
     },
     {
         "word": "exhausted",
         "translations": {
-            "ru": ["сильно усталый"]
+            "ru": ["сильно усталый"],
+            "fr": ["épuisé"]
         }
     },
     {
         "word": "delighted",
         "translations": {
-            "ru": ["очень счастливый"]
+            "ru": ["очень счастливый"],
+            "fr": ["ravi"]
         }
     },
     {
         "word": "miserable",
         "translations": {
-            "ru": ["убогий"]
+            "ru": ["убогий"],
+            "fr": ["misérable"]
         }
     },
     {
         "word": "great",
         "translations": {
-            "ru": ["превосходный"]
+            "ru": ["превосходный"],
+            "fr": ["grand", "super"]
         }
     },
     {
         "word": "terrified",
         "translations": {
-            "ru": ["сильно испуганный"]
+            "ru": ["сильно испуганный"],
+            "fr": ["terrifié"]
         }
     },
     {
         "word": "gorgeous",
         "translations": {
-            "ru": ["великолепный", "очень красивый"]
+            "ru": ["великолепный", "очень красивый"],
+            "fr": ["magnifique"]
         }
     }
 ]
