@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/global/style.css">
+
+    <link rel="stylesheet" href="./style.css">
+    <title>Xvocab</title>
+
+    <!-- Load font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:ital@1&family=Quicksand:wght@500&family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
+    <style>
+        .packs-list {
+            display: flex;
+            flex-wrap: nowrap;
+            margin: 10px;
+            overflow-x: auto;
+        }
+
+        .packs-list-item {
+            color: black;
+            display: flex;
+            flex-direction: column;
+            margin: 30px 20px 30px 20px;
+            border-radius: 10px;
+            padding: 10px;
+            width: 15%;
+            align-items: center;
+            background-color: #aeb8fe;
+            transition: all 0.15s;
+        }
+
+        .packs-list-item:hover {
+            background-color: #f1f2f6;
+            box-shadow: 10px 10px 0px 0px black;
+            transition: all 0.15s;
+        }
+    </style>
+</head>
+<body>
+    <div class="root">
+        <div class="sidebar">
+            <img src="https://static.thenounproject.com/png/4147238-200.png" width="50px" alt="Nice image">
+        </div>
+        <div class="main">
+            <div class="header">
+                <h1 class="xvocab-tite"><a href="/" class="xvocab-title-a">Xvocab</a></h1>
+            </div>
+            <div class="content">
+                <div class="packs-list" id="packs-list">
+                </div>
+            </div>
+            <div class="footer">
+                <span class="date" id="date"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="/global/get-language-gui.js"></script>
+    <script src="/global/script.js"></script>
+    <script>
+        const plist = document.getElementById('packs-list')
+        
+        var loadPackPage = (id) => {
+            window.open(`/${lg}/pack?id=${id}`, "_self")
+        }
+
+        fetch("/api/v1/get-packs-list").then(res => res.json().then(data => {
+            for(let e of data) {
+                plist.insertAdjacentHTML('beforeend', `
+                    <div class="packs-list-item" onclick="loadPackPage('${e.id}')">
+                        <h2 class="pack-name">${e.name[lg]}</h2>
+                        <p class="pack-desciption">${e.description[lg]}</p>
+                        <p class="pack-words-amount">Amount: ${e.words.amount}</p>
+                    </div>`
+                )
+            }
+        }))
+    </script>
+</body>
+</html>

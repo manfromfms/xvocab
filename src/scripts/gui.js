@@ -7,7 +7,7 @@ class GUI {
         if(!fs.existsSync(this.path)) {
             require('fs').writeFileSync(this.path, JSON.stringify({
                 language: '',
-                supported_languages: ["en", "ru", "fr"]
+                supported_languages: ["en", "ru", "fr", "de"]
             }))
         }
 
