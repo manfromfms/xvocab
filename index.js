@@ -59,6 +59,11 @@ app.get('/:language/train', (req, res) => {
     res.sendFile(__dirname + `/src/gui/${req.params.language}/train/index.html`)
 })
 
+// Cards pages
+app.get('/:language/cards', (req, res) => {
+    res.sendFile(__dirname + `/src/gui/${req.params.language}/cards/index.html`)
+})
+
 
 // ----- API ------
 app.get('/api/v1/get-packs-list', (req, res) => {

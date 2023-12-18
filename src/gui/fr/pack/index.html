@@ -95,7 +95,7 @@
             var wordsList = ""
 
             for(let i of data.words) {
-                wordsList += `<div class="word-item"><span class="word-word">${i.word}</span><span class="word-translation">${i.translations[lg]}</span></div>`
+                wordsList += `<div class="word-item"><span class="word-word">${i.word}</span><span class="word-translation">${i.translations[lg].join(', ')}</span></div>`
             }
 
             pdata.insertAdjacentHTML('beforeend', `

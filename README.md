@@ -8,7 +8,6 @@ Currently, the following languages are supported:
 1. [English](https://github.com/manfromfms/xvocab)
 2. [Русский](https://github.com/manfromfms/xvocab/blob/main/github/root/ru/README.md)
 3. [Français](https://github.com/manfromfms/xvocab/blob/main/github/root/fr/README.md)
-4. [German](https://github.com/manfromfms/xvocab/blob/main/github/root/de/README.md)
 
 # Installation
 

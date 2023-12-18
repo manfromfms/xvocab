@@ -14,49 +14,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:ital@1&family=Quicksand:wght@500&family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
     <style>
-        .pack-data {
+        .cards-list {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-        }
-        
-        .pack-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            margin: 10px;
-            max-height: min-content;
+            grid-template-columns: 1fr 1fr 1fr;
         }
 
-        .words-list {
+        .card-item {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-right: 10px;
-            padding-left: 10px;
-            overflow-x: hidden;
-        }
-
-        .word-item {
-            display: grid;
-            width: 100%;
-            grid-template-columns: 1fr 2fr;
+            justify-content: center;
+            font-size: large;
+            padding: 80px;
+            margin: 20px;
+            background-color: #aeb8fe;
             border-radius: 10px;
-            margin: 0px 10px 0px 10px;
-            padding: 10px;
-            font-size: x-large;
-            transition: all .1s;
+            color: black;
+            box-shadow: black 0px 0px 2px;
+            transition: all .2s;
         }
 
-        .word-item:hover {
-            background-color: black;
-            color: white;
-            transition: all .1s;
+        .card-item:hover {
+            box-shadow: black 10px 10px 2px;
+            transition: all .2s;
         }
 
-        .word-word {
-            text-align: end;
-            margin-right: 10px;
+        .not-showing {
+            display: none;
         }
     </style>
 </head>
@@ -70,7 +52,7 @@
                 <h1 class="xvocab-tite"><a href="/" class="xvocab-title-a">Xvocab</a></h1>
             </div>
             <div class="content">
-                <div class="pack-data" id="pack-data">
+                <div class="card-data" id="card-data">
                 </div>
             </div>
             <div class="footer">
@@ -82,7 +64,7 @@
     <script src="/global/get-language-gui.js"></script>
     <script src="/global/script.js"></script>
     <script>
-        const pdata = document.getElementById('pack-data')
+        const pdata = document.getElementById('card-data')
 
         var packData = {}
 
@@ -94,23 +76,36 @@
             window.open(`/${lg}/cards?pack=${packData.id}`, "_self")
         }
 
-        fetch(`/api/v1/get-pack-data?id=${query.get('id')}`).then(res => res.json().then(data => {
+        const switchVisibility = (elem) => {
+            Array.from(elem.children).forEach(child => {
+                child.classList.contains('not-showing') ?
+                    child.classList.remove('not-showing') :
+                    child.classList.add('not-showing');
+                elem.style.backgroundColor = '#f1f2f6';
+            })
+        }
+
+        fetch(`/api/v1/get-pack-data?id=${query.get('pack')}`).then(res => res.json().then(data => {
             packData = data
             var wordsList = ""
 
             for(let i of data.words) {
-                wordsList += `<div class="word-item"><span class="word-word">${i.word}</span><span class="word-translation">${i.translations[lg].join(', ')}</span></div>`
+                wordsList += `<div class="card-item" onclick="switchVisibility(this)"><span class="card-word not-showing">${i.word}</span><span class="card-translation">${i.translations[lg].join(', ')}</span></div>`
             }
 
+            /*
+            <div class="pack-info">
+                <h2 class="pack-name">${data.name[lg]}</h2>
+                <p class="pack-desc">${data.description[lg]}</p>
+                <p class="pack-words-amount">Кол-во слов: ${data.words.length}</p>
+                <button class="start-train" onclick="openTrain()">Тренировка</button>
+                <button class="show-cards" onclick="openCards()">Карточки</button>
+            </div>
+            */
+
             pdata.insertAdjacentHTML('beforeend', `
-                <div class="pack-info">
-                    <h2 class="pack-name">${data.name[lg]}</h2>
-                    <p class="pack-desc">${data.description[lg]}</p>
-                    <p class="pack-words-amount">Кол-во слов: ${data.words.length}</p>
-                    <button class="start-train" onclick="openTrain()">Тренировка</button>
-                    <button class="show-cards" onclick="openCards()">Карточки</button>
-                </div>
-                <div class="words-list">
+                
+                <div class="cards-list">
                     ${wordsList}
                 </div>
                 `
